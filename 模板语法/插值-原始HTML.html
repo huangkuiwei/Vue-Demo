@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>插值-原始HTML</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--这里把content作为一段普通文本输出-->
+    <p>Using mustaches: {{content}}</p>
+    <!--这里把content解析成html内容输出-->
+    <p>Using v-html directive:<span v-html="content"></span></p>
+  </div>
+
+  <script>
+    /*
+    双大括号会将数据解释为普通文本，而非 HTML 代码。为了输出真正的 HTML，你需要使用 v-html 指令：
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        content: '<span style="color: red;font-size: 30px">Hello World</span>'
+      }
+    })
+  </script>
+</body>
+</html>

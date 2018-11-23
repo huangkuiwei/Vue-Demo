@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>插值-特性</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--如果 isDisabled 的值是 null、undefined 或 false，则 disabled 特性甚至不会被包含在渲染出来的 <button> 元素中。-->
+    <button :disabled="isDisabled">按钮</button>
+  </div>
+
+  <script>
+    /*
+    Mustache 语法不能作用在 HTML 特性上，遇到这种情况应该使用 v-bind 指令：
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        isDisabled: true
+      }
+    })
+  </script>
+</body>
+</html>
