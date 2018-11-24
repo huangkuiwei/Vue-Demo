@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>绑定 HTML Class-对象语法</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--对象语法和普通的class属性共存-->
+    <p :class="{p1:p1,p2:p2}" class="p3">渲染结果为class="p1 p3"</p>
+    <!--绑定的数据对象不必内联定义在模板里-->
+    <span :class="spanClass">渲染结果为class="span2"</span>
+    <!--绑定一个返回对象的计算属性-->
+    <h1 :class="hClass">渲染结果为class="hClass2"</h1>
+  </div>
+
+  <script>
+    /*
+    我们可以传给 v-bind:class 一个对象，以动态地切换 class：
+    eg：<div v-bind:class="{ active: isActive }"></div>
+    上面的语法表示 active 这个 class 存在与否将取决于数据属性 isActive 的 truthiness。
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        p1: true,
+        p2: false,
+        spanClass: {
+          span1: false,
+          span2: true,
+          span3: false
+        }
+      },
+      computed: {
+        hClass() {
+          return {
+            hClass1: this.p1 && this.p2,
+            hClass2: this.spanClass.span1 || this.spanClass.span2
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

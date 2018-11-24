@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>绑定 HTML Class-数组语法</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--数组语法-->
+    <p :class="[p1, p2]">这里的渲染结果为class="box pox"</p>
+    <!--三元表达式-->
+    <span :class="[isActive ? span1 : span2, span3]">这里的渲染结果为class="pox fox"</span>
+    <!--数组语法里面也可以用对象语法-->
+    <h1 :class="[{box: h1,pox: h2}, h3]">这里的渲染结果为class="box fox"</h1>
+  </div>
+
+  <script>
+    /*
+    我们可以把一个数组传给 v-bind:class，以应用一个 class 列表
+    eg：<div v-bind:class="[activeClass, errorClass]"></div>
+    这里class渲染的结果取决于activeClass，errorClass的值
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        p1: 'box',
+        p2: 'pox',
+        isActive: false,
+        span1: 'box',
+        span2: 'pox',
+        span3: 'fox',
+        h1: true,
+        h2: false,
+        h3: 'fox'
+      }
+    })
+  </script>
+</body>
+</html>
