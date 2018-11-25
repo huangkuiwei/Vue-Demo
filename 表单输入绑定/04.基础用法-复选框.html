@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>基础用法-复选框</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <!--单个复选框，绑定到布尔值-->
+      <input type="checkbox" v-model="select">篮球
+      <span>{{select}}</span>
+    </div>
+    <div>
+      <!--多个复选框，绑定到同一个数组-->
+      <input type="checkbox" v-model="arr" value="篮球">篮球
+      <input type="checkbox" v-model="arr" value="排球">排球
+      <input type="checkbox" v-model="arr" value="足球">足球
+      <input type="checkbox" v-model="arr" value="橄榄球">橄榄球
+      <input type="checkbox" v-model="arr" value="乒乓球">乒乓球
+      <span>{{arr}}</span>
+    </div>
+  </div>
+
+  <script>
+    /*
+    单个复选框，绑定到布尔值
+    多个复选框，绑定到同一个数组
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        select: false,
+        arr: []
+      }
+    })
+  </script>
+</body>
+</html>
