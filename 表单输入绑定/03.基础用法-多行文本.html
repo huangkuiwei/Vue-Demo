@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>基础用法-多行文本</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <textarea cols="30" rows="10" v-model="message"></textarea>
+    <p>message:{{message}}</p>
+  </div>
+
+  <script>
+    /*
+    在文本区域插值 (<textarea></textarea>) 并不会生效，应用 v-model 来代替。
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        message: ''
+      }
+    })
+  </script>
+</body>
+</html>
