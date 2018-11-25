@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> todo list-01 </title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <label for="add-item">添加项目：</label>
+      <input type="text" id="add-item" v-model="data">
+      <button @click="addItem">添加项目</button>
+    </div>
+    <ul v-if="items.length">
+      <li v-for="(item, index) in items">
+        <span>{{item}}</span>
+        <button @click="items.splice(index, 1)">删除</button>
+      </li>
+    </ul>
+    <p v-else>暂无项目</p>
+  </div>
+
+  <script>
+    /*
+    
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        items: [],
+        data: ''
+      },
+      methods: {
+        addItem() {
+          if (!this.data) {
+            alert('您还没有输入...');
+            return
+          }
+          this.items.push(this.data);
+          this.data = ''
+        }
+      }
+    })
+  </script>
+</body>
+</html>
