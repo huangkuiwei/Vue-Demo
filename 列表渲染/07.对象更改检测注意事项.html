@@ -9,7 +9,7 @@
   <div id="app">
     {{a}}
     <ul>
-      <li v-for="(item, key) in obj">{{key}} => {{item}}</li>
+      <li v-for="(item, key) in obj" :key="key">{{key}} => {{item}}</li>
     </ul>
   </div>
 

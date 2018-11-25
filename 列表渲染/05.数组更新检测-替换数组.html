@@ -8,7 +8,7 @@
 <body>
   <div id="app">
     <ul>
-      <li v-for="(item, index) in arr">
+      <li v-for="(item, index) in arr" :key="item.id">
         NO{{index + 1}}---姓名：{{item.name}}，年龄：{{item.age}}
       </li>
       <button @click="select">筛选出所有姓张的名字</button>
