@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组更新检测-替换数组</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(item, index) in arr">
+        NO{{index + 1}}---姓名：{{item.name}}，年龄：{{item.age}}
+      </li>
+      <button @click="select">筛选出所有姓张的名字</button>
+    </ul>
+  </div>
+
+  <script>
+    /*
+    有非变异 (non-mutating method) 方法，例如：filter(), concat() 和 slice() 。
+    这些不会改变原始数组，但总是返回一个新数组。当使用非变异方法时，可以用新数组替换旧数组。
+    你可能认为这将导致 Vue 丢弃现有 DOM 并重新渲染整个列表。
+    幸运的是，事实并非如此。Vue 为了使得 DOM 元素得到最大范围的重用而实现了一些智能的、启发式的方法，所以用一个含有相同元素的数组去替换原来的数组是非常高效的操作。
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        arr: [
+          {name: '张三', age: 24},
+          {name: '李四', age: 33},
+          {name: '王五', age: 46},
+          {name: '张老头', age: 44},
+          {name: '张秋生', age: 52},
+          {name: '黄大仙', age: 37},
+          {name: '张翠山', age: 29}
+        ]
+      },
+      methods: {
+        select() {
+          this.arr = this.arr.filter((item) => {
+            let re = /^张/;
+            //筛选出所有张姓开头的名字
+            //return re.test(item.name)
+            return item.name.match(re)
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>

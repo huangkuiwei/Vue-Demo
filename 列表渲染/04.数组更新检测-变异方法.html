@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组更新检测-变异方法</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in arr">
+        {{item.name}}
+      </li>
+    </ul>
+    <!--向arr数组中添加数组，视图会同步更新-->
+    <button @click="add">添加成员</button>
+  </div>
+
+  <script>
+    /*
+    Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下：
+    push()      pop()     shift()     unshift()     splice()      sort()      reverse()
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        arr: [
+          {name: '张三', age: 24},
+          {name: '李四', age: 33},
+          {name: '王五', age: 46}
+        ]
+      },
+      methods: {
+        add() {
+          this.arr.push({name: '赵六', age: 42})
+        }
+      }
+    })
+  </script>
+</body>
+</html>
