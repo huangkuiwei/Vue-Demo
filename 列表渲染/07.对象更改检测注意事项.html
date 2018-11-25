@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>对象更改检测注意事项</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{a}}
+    <ul>
+      <li v-for="(item, key) in obj">{{key}} => {{item}}</li>
+    </ul>
+  </div>
+
+  <script>
+    /*
+    由于 JavaScript 的限制，Vue 不能检测对象属性的添加或删除。
+    对于已经创建的实例，Vue 不能动态添加根级别的响应式属性。
+    但是，可以使用 Vue.set(object, key, value) 方法向嵌套对象添加响应式属性。
+    */
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        a: '',
+        obj: {
+          x: 20,
+          y: 30
+        }
+      }
+    });
+    vm.a = 'Hello Vue.js';                  //`vm.a` 现在是响应式的
+    vm.b = 'Hello World';                   //`vm.b` 不是响应式的
+    vm.obj.z = 40;                          //`vm.obj.z` 现在是响应式的
+    vm.$set(vm.obj, 'm', 50);               //`vm.$set()` 现在是响应式的
+    vm.obj = Object.assign({}, vm.obj, {    //需要为已有对象赋予多个新属性，可以使用Object.assign()
+      n: 60,
+      o: 70
+    })
+  </script>
+</body>
+</html>
