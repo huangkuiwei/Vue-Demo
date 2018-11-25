@@ -7,7 +7,7 @@
 </head>
 <body>
   <div id="app">
-
+    <button @click.ctrl="greet">按钮</button>
   </div>
 
   <script>
@@ -24,7 +24,12 @@
           而单单释放 ctrl 也不会触发事件。如果你想要这样的行为，请为 ctrl 换用 keyCode：keyup.17。
     */
     new Vue({
-      el: '#app'
+      el: '#app',
+      methods: {
+        greet() {
+          alert('Hello Vue.js')
+        }
+      }
     })
   </script>
 </body>

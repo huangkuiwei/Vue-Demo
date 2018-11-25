@@ -7,7 +7,12 @@
 </head>
 <body>
   <div id="app">
-
+    <!--默认单机左键-->
+    <button @click.left="greet">按钮</button>
+    <!--单间中键-->
+    <button @click.middle="greet">按钮</button>
+    <!--单机右键并阻止默认事件-->
+    <button @click.right.prevent="greet">按钮</button>
   </div>
 
   <script>
@@ -16,7 +21,12 @@
     .left     .right      .middle
     */
     new Vue({
-      el: '#app'
+      el: '#app',
+      methods: {
+        greet(){
+          alert('Hello Vue.js')
+        }
+      }
     })
   </script>
 </body>
