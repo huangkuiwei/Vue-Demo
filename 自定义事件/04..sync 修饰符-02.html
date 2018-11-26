@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>.sync 修饰符</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <com-a v-bind.sync="blog"></com-a>
+  </div>
+
+  <script>
+    /*
+    当我们用一个对象同时设置多个 prop 的时候，也可以将这个 .sync 修饰符和 v-bind 配合使用。
+    eg：<text-document v-bind.sync="doc"></text-document>
+    这样会把 doc 对象中的每一个属性 (如 title) 都作为一个独立的 prop 传进去，然后各自添加用于更新的 v-on 监听器。
+    将 v-bind.sync 用在一个字面量的对象上，例如 v-bind.sync=”{ title: doc.title }”，
+    是无法正常工作的，因为在解析一个像这样的复杂表达式的时候，有很多边缘情况需要考虑。
+    */
+    Vue.component('com-a', {
+      props: ['title', 'createTime'],
+      template: `<div><h1>{{title}}</h1><span>{{createTime}}</span><button @click="change">按钮</button></div>`,
+      methods: {
+        change() {
+          this.$emit('update:title', 'Hello Vue.js');
+          this.$emit('update:createTime', '8888.88.88')
+        }
+      }
+    });
+
+    new Vue({
+      el: '#app',
+      data: {
+        blog: {
+          title: '这是一条新闻',
+          createTime: '2018.11.26'
+        }
+      }
+    })
+  </script>
+</body>
+</html>
