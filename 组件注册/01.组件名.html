@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件名</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+
+  <script>
+    /*
+    在注册一个组件的时候，我们始终需要给它一个名字。比如在全局注册的时候我们已经看到了：
+    Vue.component('my-component-name', {  ...  })
+    该组件名就是 Vue.component 的第一个参数。
+    注意：你给予组件的名字可能依赖于你打算拿它来做什么。
+    当直接在 DOM 中使用一个组件 (而不是在字符串模板或单文件组件) 的时候，我们强烈推荐遵循 W3C 规范中的自定义组件名 (字母全小写且必须包含一个连字符)。
+    这会帮助你避免和当前以及未来的 HTML 元素相冲突。
+    */
+    new Vue({
+      el: '#app',
+      data: {}
+    })
+  </script>
+</body>
+</html>
