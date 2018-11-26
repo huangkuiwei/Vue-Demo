@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>访问元素 & 组件-访问根实例</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>{{message}}</p>
+    <com-a></com-a>
+  </div>
+  <template id="com-a">
+    <div>
+      <!--访问根实例数据-->
+      <p>{{$root.message}}</p>
+      <!--调用根组件方法-->
+      <button @click="$root.greet()">按钮</button>
+      <!--修改根组件数据-->
+      <button @click="$root.message = 'Hello World'">按钮</button>
+      <!--访问根组件计算属性-->
+      <p>{{$root.newMessage}}</p>
+    </div>
+  </template>
+  <script>
+    /*
+    在每个 new Vue 实例的子组件中，其根实例可以通过 $root 属性进行访问。
+    */
+    Vue.component('com-a', {
+      template: `#com-a`,
+
+    });
+
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue.js'
+      },
+      methods: {
+        greet() {
+          alert('Hello World')
+        }
+      },
+      computed: {
+        newMessage() {
+          return this.message + '，Hello everybody'
+        }
+      }
+    })
+  </script>
+</body>
+</html>
