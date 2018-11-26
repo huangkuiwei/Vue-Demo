@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>传递静态或动态 Prop</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+
+  <script>
+    /*
+    注意：任何类型的值都可以传给一个 prop
+    1.给 prop 传入一个静态的值：
+    <blog-post title="My journey with Vue"></blog-post>
+    2.动态赋予一个变量的值：
+    <blog-post v-bind:title="post.title"></blog-post>
+    3.动态赋予一个复杂表达式的值：
+    <blog-post v-bind:title="post.title + ' by ' + post.author.name"></blog-post>
+    */
+    new Vue({
+      el: '#app',
+      data: {}
+    })
+  </script>
+</body>
+</html>
