@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>访问元素 & 组件-访问子组件实例或子元素</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p ref="p1">{{message}}</p>
+    <button @click="changeColor">按钮</button>
+  </div>
+
+  <script>
+    /*
+    尽管存在 prop 和事件，有的时候你仍可能需要在 JavaScript 里直接访问一个子组件。
+    为了达到这个目的，你可以通过 ref 特性为这个子组件赋予一个 ID 引用。
+    当 ref 和 v-for 一起使用的时候，你得到的引用将会是一个包含了对应数据源的这些子组件的数组。
+    $refs 只会在组件渲染完成之后生效，并且它们不是响应式的。
+    这只意味着一个直接的子组件封装的“逃生舱”——你应该避免在模板或计算属性中访问 $refs。
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue.js'
+      },
+      methods: {
+        changeColor() {
+          this.$refs.p1.style.color = 'red';
+          this.$refs.p1.style.fontSize = '30px'
+        }
+      }
+    })
+  </script>
+</body>
+</html>
