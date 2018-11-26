@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>data 必须是一个函数</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button-count></button-count>
+  </div>
+  <!-- button-count 组件 -->
+  <template id="button-count">
+    <div>
+      <button @click="count++">按钮</button>
+      <p>按钮被按了{{count}}次</p>
+    </div>
+  </template>
+
+  <script>
+    /*
+    当我们定义这个 <button-counter> 组件时，你可能会发现它的 data 并不是像这样直接提供一个对象。
+    取而代之的是，一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝。
+    如果 Vue 没有这条规则，点击一个按钮就可能会影响到其它所有实例。
+    */
+    Vue.component('button-count', {
+      template: '#button-count',
+      //data必须是个函数，返回一个对象
+      data() {
+        return {
+          count: 0
+        }
+      }
+    });
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>
