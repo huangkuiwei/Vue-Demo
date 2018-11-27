@@ -7,7 +7,7 @@
 </head>
 <body>
   <div id="app">
-
+    <p v-demo:a.b.c="1"></p>
   </div>
 
   <script>
@@ -21,13 +21,22 @@
                expression：字符串形式的指令表达式。例如 v-my-directive="1 + 1" 中，表达式为 "1 + 1"。
                arg：传给指令的参数，可选。例如 v-my-directive:foo 中，参数为 "foo"。
                modifiers：一个包含修饰符的对象。例如：v-my-directive.foo.bar 中，修饰符对象为 { foo: true, bar: true }。
-    3.vnode：Vue 编译生成的虚拟节点。移步 VNode API 来了解更多详情。
+    3.vnode：Vue 编译生成的虚拟节点。
     4.oldVnode：上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。
     注意：除了 el 之外，其它参数都应该是只读的，切勿进行修改。如果需要在钩子之间共享数据，建议通过元素的 dataset 来进行。
     */
+    Vue.directive('demo', {
+      inserted(el, binding, vnode) {
+        el.innerHTML = `binding.name => ${binding.name}<br>
+                        binding.value => ${binding.value}<br>
+                        binding.arg => ${binding.arg}<br>
+                        binding.modifiers => ${JSON.stringify(binding.modifiers)}<br>
+                        vnode => ${Object.keys(vnode).join(', ')}`
+      }
+    });
+
     new Vue({
-      el: '#app',
-      data: {}
+      el: '#app'
     })
   </script>
 </body>
