@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>createElement 参数-完整示例</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <anchored-heading :level="1">Hello World</anchored-heading>
+  </div>
+
+  <script>
+    /*
+    
+    */
+    Vue.component('anchored-heading', {
+      render(h) {
+        return h(`h${this.level}`, [h('a', {
+          attrs: {
+            href: `#${this.message.toLowerCase().trim().replace(/\s/g, '-')}`,
+            name: `${this.message.toLowerCase().trim().replace(/\s/g, '-')}`,
+          }
+        }, 'Hello World')])
+      },
+      data() {
+        return {
+          message: 'Hello World'
+        }
+      },
+      props: {
+        level: {
+          type: Number,
+          required: true
+        }
+      }
+    });
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用 JavaScript 代替模板功能-v-if 和 v-for</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <render-demo :items="items"></render-demo>
+  </div>
+
+  <script>
+    /*
+    
+    */
+    Vue.component('render-demo', {
+      render(h) {
+        if (this.items.length > 0) {
+          return h('ul', this.items.map((item, index) => {
+            return h('li', `NO${index + 1}---${item.name} => ${item.age}`)
+          }))
+        } else {
+          return h('p', '暂无项目')
+        }
+      },
+      props: {
+        items: {
+          type: Array,
+          required: true
+        }
+      }
+    });
+
+    new Vue({
+      el: '#app',
+      data: {
+        items: [
+          {id: 1, name: '张三', age: 22},
+          {id: 2, name: '李四', age: 32},
+          {id: 3, name: '王五', age: 29},
+          {id: 4, name: '赵六', age: 35}
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
