@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用 JavaScript 代替模板功能-v-model</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <base-input v-model="value"></base-input>
+    {{value}}
+  </div>
+
+  <script>
+    /*
+    render 函数中没有与 v-model 的直接对应 - 你必须自己实现相应的逻辑
+    */
+    Vue.component('base-input', {
+      render(h) {
+        return h('input', {
+          domProps: {
+            value: this.value
+          },
+          on: {
+            input: $event => {
+              this.$emit('input', $event.target.value)
+            }
+          }
+        })
+      },
+      props: ['value']
+    });
+
+    new Vue({
+      el: '#app',
+      data: {
+        value: ''
+      }
+    })
+  </script>
+</body>
+</html>
