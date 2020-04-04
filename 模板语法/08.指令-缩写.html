@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>指令-缩写</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <!-- v-bind: => : -->
-    <a :href="url">百度一下，你就知道</a>
-    <!-- v-on: => @ -->
-    <button @click="doSomething">按钮</button>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>指令-缩写</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-bind: => : -->
+      <a :href="url">百度一下，你就知道</a>
+      <!-- v-on: => @ -->
+      <button @click="doSomething">按钮</button>
+    </div>
 
-  <script>
+    <script>
     /*
     v- 前缀作为一种视觉提示，用来识别模板中 Vue 特定的特性。当你在使用 Vue.js 为现有标签添加动态行为 (dynamic behavior) 时，
     v- 前缀很有帮助，然而，对于一些频繁用到的指令来说，就会感到使用繁琐。
@@ -26,11 +26,11 @@
         url: 'https://www.baidu.com'
       },
       methods: {
-        doSomething() {
+        doSomething () {
           alert('Hello World')
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

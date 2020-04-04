@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>指令</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <!--v-if 指令将根据表达式 seen1 和 seen2 的值的真假来插入/移除 <p> 元素。-->
-    <p v-if="seen1">Hello Vue.js</p>
-    <p v-if="seen2">Hello World</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>指令</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--v-if 指令将根据表达式 seen1 和 seen2 的值的真假来插入/移除 <p> 元素。-->
+      <p v-if="seen1">Hello Vue.js</p>
+      <p v-if="seen2">Hello World</p>
+    </div>
 
-  <script>
+    <script>
     /*
     指令 (Directives) 是带有 v- 前缀的特殊特性。指令特性的值预期是单个 JavaScript 表达式 (v-for 是例外情况)。
     指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。
@@ -24,6 +24,6 @@
         seen2: false
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

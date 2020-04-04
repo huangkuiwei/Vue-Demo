@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title> todo list-02 </title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <div>
-      <label for="add-item">添加项目：</label>
-      <input type="text" id="add-item" v-model="data">
-      <button @click="addItem">添加项目</button>
-    </div>
-    <ul v-if="items.length">
-      <com-a
+  <head>
+    <meta charset="UTF-8">
+    <title> todo list-02 </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <label for="add-item">添加项目：</label>
+        <input type="text" id="add-item" v-model="data">
+        <button @click="addItem">添加项目</button>
+      </div>
+      <ul v-if="items.length">
+        <com-a
           v-for="(item, index) in items"
           :item="item"
           @remove="items.splice(index, 1)"
           :key="item.id">
-      </com-a>
-    </ul>
-    <p v-else>暂无项目</p>
-  </div>
-  <!-- com-a 组件 -->
-  <template id="com-a">
-    <li>
-      <span>{{item}}</span>
-      <button @click="$emit('remove')">删除</button>
-    </li>
-  </template>
+        </com-a>
+      </ul>
+      <p v-else>暂无项目</p>
+    </div>
+    <!-- com-a 组件 -->
+    <template id="com-a">
+      <li>
+        <span>{{item}}</span>
+        <button @click="$emit('remove')">删除</button>
+      </li>
+    </template>
 
-  <script>
+    <script>
     /*
-    
+
     */
     Vue.component('com-a', {
       template: '#com-a',
       props: {
         item: String
       }
-    });
+    })
 
     new Vue({
       el: '#app',
@@ -48,16 +48,16 @@
         data: ''
       },
       methods: {
-        addItem() {
+        addItem () {
           if (!this.data) {
-            alert('您还没有输入...');
+            alert('您还没有输入...')
             return
           }
-          this.items.push(this.data);
+          this.items.push(this.data)
           this.data = ''
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

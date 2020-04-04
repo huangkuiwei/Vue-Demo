@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>v-for on a template</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <ul>
-      <template v-for="item in arr" :key="item.id">
-        <li>{{item.name}}</li>
-        <li>{{item.age}}</li>
-      </template>
-    </ul>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>v-for on a template</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <template v-for="item in arr" :key="item.id">
+          <li>{{item.name}}</li>
+          <li>{{item.age}}</li>
+        </template>
+      </ul>
+    </div>
 
-  <script>
+    <script>
     /*
     类似于 v-if，你也可以利用带有 v-for 的 <template> 渲染多个元素
     */
@@ -23,11 +23,11 @@
       el: '#app',
       data: {
         arr: [
-          {name: '张三', age: 22},
-          {name: '李四', age: 24}
+          { name: '张三', age: 22 },
+          { name: '李四', age: 24 }
         ]
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

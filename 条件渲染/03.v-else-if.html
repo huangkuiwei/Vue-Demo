@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>v-else-if</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <p v-if="num === 10">num的值为10</p>
-    <p v-else-if="num === 20">num的值为20</p>
-    <p v-else>num的值不是10，也不是20</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>v-else-if</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p v-if="num === 10">num的值为10</p>
+      <p v-else-if="num === 20">num的值为20</p>
+      <p v-else>num的值不是10，也不是20</p>
+    </div>
 
-  <script>
+    <script>
     /*
     v-else-if，顾名思义，充当 v-if 的“else-if 块”，可以连续使用
     */
@@ -22,6 +22,6 @@
         num: 10
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

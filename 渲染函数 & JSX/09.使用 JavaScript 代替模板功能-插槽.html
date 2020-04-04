@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>使用 JavaScript 代替模板功能-插槽</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <render-demo>
-      <p>
-        Hello Vue.js --- From default
-      </p>
-      <p slot="name1">
-        Hello Vue.js --- From name1
-      </p>
-      <p slot="name2" slot-scope="{message}">
-        {{message}} --- From name2
-      </p>
-    </render-demo>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>使用 JavaScript 代替模板功能-插槽</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <render-demo>
+        <p>
+          Hello Vue.js --- From default
+        </p>
+        <p slot="name1">
+          Hello Vue.js --- From name1
+        </p>
+        <p slot="name2" slot-scope="{message}">
+          {{message}} --- From name2
+        </p>
+      </render-demo>
+    </div>
 
-  <script>
+    <script>
     /*
     你可以通过 this.$slots 访问静态插槽的内容，得到的是一个 VNodes 数组。
     */
     Vue.component('render-demo', {
-        render(h) {
-          return h('div', [this.$slots.default, this.$slots.name1, this.$scopedSlots.name2({message: this.message})])
+        render (h) {
+          return h('div', [this.$slots.default, this.$slots.name1, this.$scopedSlots.name2({ message: this.message })])
         },
-        data() {
+        data () {
           return {
             message: 'Hello Vue.js'
           }
         }
       }
-    );
+    )
 
     new Vue({
       el: '#app'
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

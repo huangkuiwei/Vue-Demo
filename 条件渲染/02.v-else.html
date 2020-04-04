@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>v-else</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <p v-if="Math.random() > 0.5">
-      Hello World!
-    </p>
-    <p v-else>
-      Hello Vue.js
-    </p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>v-else</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p v-if="Math.random() > 0.5">
+        Hello World!
+      </p>
+      <p v-else>
+        Hello Vue.js
+      </p>
+    </div>
 
-  <script>
+    <script>
     /*
     你可以使用 v-else 指令来表示 v-if 的“else 块”
     注意：v-else 元素必须紧跟在带 v-if 或者 v-else-if 的元素的后面，否则它将不会被识别。
@@ -23,6 +23,6 @@
     new Vue({
       el: '#app'
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

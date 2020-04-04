@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>通过插槽分发内容</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <com-a title="Hello HTML">hello HTML</com-a>
-    <com-a title="Hello JavaScript">Hello JavaScript</com-a>
-    <com-a title="Hello CSS">Hello CSS</com-a>
-  </div>
-  <template id="com-a">
-    <div>
-      <h3>{{title}}</h3>
-      <!--在需要的地方加入插槽-->
-      <slot></slot>
+  <head>
+    <meta charset="UTF-8">
+    <title>通过插槽分发内容</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <com-a title="Hello HTML">hello HTML</com-a>
+      <com-a title="Hello JavaScript">Hello JavaScript</com-a>
+      <com-a title="Hello CSS">Hello CSS</com-a>
     </div>
-  </template>
+    <template id="com-a">
+      <div>
+        <h3>{{title}}</h3>
+        <!--在需要的地方加入插槽-->
+        <slot></slot>
+      </div>
+    </template>
 
-  <script>
+    <script>
     /*
     在需要的地方加入插槽
     */
@@ -28,12 +28,12 @@
       props: {
         title: String
       }
-    });
+    })
 
     new Vue({
       el: '#app',
       data: {}
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

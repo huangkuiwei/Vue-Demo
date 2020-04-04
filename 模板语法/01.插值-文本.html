@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>插值-文本</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <p>Message：{{message}}</p>
-    <!--改变name的值，这里的name不会发生改变-->
-    <p v-once>这个将不会改变: {{ name }}</p>
-  </div>
-  <script>
+  <head>
+    <meta charset="UTF-8">
+    <title>插值-文本</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>Message：{{message}}</p>
+      <!--改变name的值，这里的name不会发生改变-->
+      <p v-once>这个将不会改变: {{ name }}</p>
+    </div>
+    <script>
     /*
     数据绑定最常见的形式就是使用“Mustache”语法 (双大括号) 的文本插值：
     eg：<p>Message: {{ msg }}</p>
@@ -32,6 +32,6 @@
         name: '张三'
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>使用 JavaScript 代替模板功能-v-if 和 v-for</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <render-demo :items="items"></render-demo>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>使用 JavaScript 代替模板功能-v-if 和 v-for</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <render-demo :items="items"></render-demo>
+    </div>
 
-  <script>
+    <script>
     /*
     只要在原生的 JavaScript 中可以轻松完成的操作，Vue 的 render 函数就不会提供专有的替代方法。
     比如，在 template 中使用的 v-if 和 v-for
     */
     Vue.component('render-demo', {
-      render(h) {
+      render (h) {
         if (this.items.length > 0) {
           return h('ul', this.items.map((item, index) => {
             return h('li', `NO${index + 1}---${item.name} => ${item.age}`)
@@ -31,19 +31,19 @@
           required: true
         }
       }
-    });
+    })
 
     new Vue({
       el: '#app',
       data: {
         items: [
-          {id: 1, name: '张三', age: 22},
-          {id: 2, name: '李四', age: 32},
-          {id: 3, name: '王五', age: 29},
-          {id: 4, name: '赵六', age: 35}
+          { id: 1, name: '张三', age: 22 },
+          { id: 2, name: '李四', age: 32 },
+          { id: 3, name: '王五', age: 29 },
+          { id: 4, name: '赵六', age: 35 }
         ]
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

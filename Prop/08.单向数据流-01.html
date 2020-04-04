@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>单向数据流</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
+  <head>
+    <meta charset="UTF-8">
+    <title>单向数据流</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
 
-  </div>
+    </div>
 
-  <script>
+    <script>
     /*
     所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定：父级 prop 的更新会向下流动到子组件中，
     但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。
@@ -21,6 +21,6 @@
       el: '#app',
       data: {}
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

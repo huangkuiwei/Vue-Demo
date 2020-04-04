@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>通过 Prop 向子组件传递数据-02</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <!-- 动态传递prop，属性名只能用驼峰式命名！ -->
-    <blog-detail :blog-item="item" v-for="item of blog" :key="item.id"></blog-detail>
-  </div>
-  <template id="blog-detail">
-    <div>
-      <h3 style="display: inline-block;">{{blogItem.title}}</h3>
-      <span>{{blogItem.createTime}}</span>
+  <head>
+    <meta charset="UTF-8">
+    <title>通过 Prop 向子组件传递数据-02</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 动态传递prop，属性名只能用驼峰式命名！ -->
+      <blog-detail :blog-item="item" v-for="item of blog" :key="item.id"></blog-detail>
     </div>
-  </template>
+    <template id="blog-detail">
+      <div>
+        <h3 style="display: inline-block;">{{blogItem.title}}</h3>
+        <span>{{blogItem.createTime}}</span>
+      </div>
+    </template>
 
-  <script>
+    <script>
     /*
     我们可以使用 v-bind 来动态传递 prop
     */
@@ -26,19 +26,19 @@
       props: {
         blogItem: Object
       }
-    });
+    })
 
     new Vue({
       el: '#app',
       data: {
         blog: [
-          {id: 1, title: '写在习近平考察曲阜五周年之际', createTime: '2018.9.22'},
-          {id: 2, title: '记奋战在脱贫攻坚战场上的村党支部书记', createTime: '2018.10.22'},
-          {id: 3, title: '海上丝路看今朝：2018年习近平亚太之行', createTime: '2018.11.22'},
-          {id: 4, title: '中国受害者平均遭受35次家暴才会报警', createTime: '2018.11.09'}
+          { id: 1, title: '写在习近平考察曲阜五周年之际', createTime: '2018.9.22' },
+          { id: 2, title: '记奋战在脱贫攻坚战场上的村党支部书记', createTime: '2018.10.22' },
+          { id: 3, title: '海上丝路看今朝：2018年习近平亚太之行', createTime: '2018.11.22' },
+          { id: 4, title: '中国受害者平均遭受35次家暴才会报警', createTime: '2018.11.09' }
         ]
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

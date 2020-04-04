@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>修饰符-.number</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <input type="text" v-model.number="num">
-    <p>num的值：{{num}} 类型：{{typeof num}}</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>修饰符-.number</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model.number="num">
+      <p>num的值：{{num}} 类型：{{typeof num}}</p>
+    </div>
 
-  <script>
+    <script>
     /*
     如果想自动将用户的输入值转为数值类型，可以给 v-model 添加 number 修饰符：
     eg：<input v-model.number="age" type="number">
@@ -24,6 +24,6 @@
         num: null
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

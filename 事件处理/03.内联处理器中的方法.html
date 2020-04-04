@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>内联处理器中的方法</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <button @click="say('hi')">say hi</button>
-    <button @click="say('hello')">say hello</button>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>内联处理器中的方法</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="say('hi')">say hi</button>
+      <button @click="say('hello')">say hello</button>
+    </div>
 
-  <script>
+    <script>
     /*
-    
+
     */
     new Vue({
       el: '#app',
       methods: {
-        say(message) {
+        say (message) {
           alert(message)
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

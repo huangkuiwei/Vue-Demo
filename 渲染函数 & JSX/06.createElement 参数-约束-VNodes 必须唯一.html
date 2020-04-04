@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>createElement 参数-约束-VNodes 必须唯一</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <render-demo></render-demo>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>createElement 参数-约束-VNodes 必须唯一</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <render-demo></render-demo>
+    </div>
 
-  <script>
+    <script>
     /*
     组件树中的所有 VNodes 必须是唯一的。这意味着，下面的 render function 是无效的：
     render: function (createElement) {
@@ -33,17 +33,17 @@
     Vue.component('render-demo', {
       render: function (createElement) {
         return createElement('div',
-          Array.apply(null, {length: 20}).map(function () {
+          Array.apply(null, { length: 20 }).map(function () {
             return createElement('p', 'hi')
           })
         )
       }
-    });
+    })
 
     new Vue({
       el: '#app',
       data: {}
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

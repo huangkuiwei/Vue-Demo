@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>指令-修饰符</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <!--阻止默认事件-->
-    <form v-bind:action="url" v-on:submit.prevent>
-      <input type="submit">
-    </form>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>指令-修饰符</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--阻止默认事件-->
+      <form v-bind:action="url" v-on:submit.prevent>
+        <input type="submit">
+      </form>
+    </div>
 
-  <script>
+    <script>
     /*
     修饰符 (Modifiers) 是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。
     eg：.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()
@@ -24,6 +24,6 @@
         url: 'https://www.baidu.com'
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

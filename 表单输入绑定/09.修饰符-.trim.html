@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>修饰符-.trim</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <input type="text" v-model.trim="message">
-    <p>message:{{message}}</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>修饰符-.trim</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model.trim="message">
+      <p>message:{{message}}</p>
+    </div>
 
-  <script>
+    <script>
     /*
     如果要自动过滤用户输入的首尾空白字符，可以给 v-model 添加 trim 修饰符
     */
@@ -21,6 +21,6 @@
         message: ''
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

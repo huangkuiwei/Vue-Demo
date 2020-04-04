@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>基础用法-选择框</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <!--单选时-->
-    <select v-model="select1">
-      <option value="" disabled>请选择</option>
-      <option value="one">选项1</option>
-      <option value="two">选项2</option>
-      <option value="three">选项3</option>
-      <option value="four">选项4</option>
-    </select>
-    <p>您选择的为：{{select1}}</p>
-    <!--多选时-->
-    <select v-model="select2" multiple>
-      <option value="" disabled>请选择</option>
-      <option value="one">选项1</option>
-      <option value="two">选项2</option>
-      <option value="three">选项3</option>
-      <option value="four">选项4</option>
-    </select>
-    <p>您选择的为：{{select2}}</p>
-    <!--用 v-for 渲染的动态选项：-->
-    <select v-model="select3">
-      <option value="" disabled>请选择</option>
-      <option v-for="item in items" :value="item.id">{{item.name}}</option>
-    </select>
-    <p>您选择的为：{{select3}}</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>基础用法-选择框</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--单选时-->
+      <select v-model="select1">
+        <option value="" disabled>请选择</option>
+        <option value="one">选项1</option>
+        <option value="two">选项2</option>
+        <option value="three">选项3</option>
+        <option value="four">选项4</option>
+      </select>
+      <p>您选择的为：{{select1}}</p>
+      <!--多选时-->
+      <select v-model="select2" multiple>
+        <option value="" disabled>请选择</option>
+        <option value="one">选项1</option>
+        <option value="two">选项2</option>
+        <option value="three">选项3</option>
+        <option value="four">选项4</option>
+      </select>
+      <p>您选择的为：{{select2}}</p>
+      <!--用 v-for 渲染的动态选项：-->
+      <select v-model="select3">
+        <option value="" disabled>请选择</option>
+        <option v-for="item in items" :value="item.id">{{item.name}}</option>
+      </select>
+      <p>您选择的为：{{select3}}</p>
+    </div>
 
-  <script>
+    <script>
     /*
     如果 v-model 表达式的初始值未能匹配任何选项，<select> 元素将被渲染为“未选中”状态。在 iOS 中，这会使用户无法选择第一个选项。
     因为这样的情况下，iOS 不会触发 change 事件。因此，更推荐像上面这样提供一个值为空的禁用选项。
@@ -44,14 +44,14 @@
         select1: '',
         select2: [],
         items: [
-          {id: 1, name: '张三', age: 22},
-          {id: 2, name: '李四', age: 34},
-          {id: 3, name: '王五', age: 29},
-          {id: 4, name: '赵六', age: 43}
+          { id: 1, name: '张三', age: 22 },
+          { id: 2, name: '李四', age: 34 },
+          { id: 3, name: '王五', age: 29 },
+          { id: 4, name: '赵六', age: 43 }
         ],
         select3: ''
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

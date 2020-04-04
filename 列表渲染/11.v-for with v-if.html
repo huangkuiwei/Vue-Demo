@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>v-for with v-if</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <ul>
-      <!--这里只渲染 item.show 为 true 的项目-->
-      <li v-for="item in items" v-if="item.show">
-        {{item.name}}
-      </li>
-    </ul>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>v-for with v-if</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <!--这里只渲染 item.show 为 true 的项目-->
+        <li v-for="item in items" v-if="item.show">
+          {{item.name}}
+        </li>
+      </ul>
+    </div>
 
-  <script>
+    <script>
     /*
     当它们处于同一节点，v-for 的优先级比 v-if 更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。
     当你想为仅有的一些项渲染节点时，这种优先级的机制会十分有用。
@@ -24,13 +24,13 @@
       el: '#app',
       data: {
         items: [
-          {name: 'apple', show: false},
-          {name: 'pear', show: true},
-          {name: 'banner', show: true},
-          {name: 'orange', show: true}
+          { name: 'apple', show: false },
+          { name: 'pear', show: true },
+          { name: 'banner', show: true },
+          { name: 'orange', show: true }
         ]
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

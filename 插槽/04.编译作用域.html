@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>编译作用域</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <com-a title="Hello Vue.js">
-      <!--该插槽可以访问跟这个模板的其它地方相同的实例属性 (也就是说“作用域”是相同的)-->
-      <!--但这个插槽不能访问 <com-a> 的作用域。例如尝试访问 title 是不会工作的-->
-      <p>{{content}}</p>
-    </com-a>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>编译作用域</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <com-a title="Hello Vue.js">
+        <!--该插槽可以访问跟这个模板的其它地方相同的实例属性 (也就是说“作用域”是相同的)-->
+        <!--但这个插槽不能访问 <com-a> 的作用域。例如尝试访问 title 是不会工作的-->
+        <p>{{content}}</p>
+      </com-a>
+    </div>
 
-  <script>
+    <script>
     /*
     父组件模板的所有东西都会在父级作用域内编译；子组件模板的所有东西都会在子级作用域内编译。
     */
     Vue.component('com-a', {
       props: ['title'],
       template: '<div><h1>{{title}}</h1><slot></slot></div>'
-    });
+    })
 
     new Vue({
       el: '#app',
@@ -29,6 +29,6 @@
         content: '内容内容内容......'
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>系统修饰键</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <button @click.ctrl="greet">按钮</button>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>系统修饰键</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button @click.ctrl="greet">按钮</button>
+    </div>
 
-  <script>
+    <script>
     /*
     可以用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器。
     .ctrl     .alt      .shift      .meta
@@ -26,11 +26,11 @@
     new Vue({
       el: '#app',
       methods: {
-        greet() {
+        greet () {
           alert('Hello Vue.js')
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>通过 Prop 向子组件传递数据</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <blog-title title="写在习近平考察曲阜五周年之际"></blog-title>
-    <blog-title title="海上丝路看今朝：2018年习近平亚太之行"></blog-title>
-    <blog-title title="记奋战在脱贫攻坚战场上的村党支部书记"></blog-title>
-  </div>
-  <template id="blog-title">
-    <h1>{{title}}</h1>
-  </template>
+  <head>
+    <meta charset="UTF-8">
+    <title>通过 Prop 向子组件传递数据</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <blog-title title="写在习近平考察曲阜五周年之际"></blog-title>
+      <blog-title title="海上丝路看今朝：2018年习近平亚太之行"></blog-title>
+      <blog-title title="记奋战在脱贫攻坚战场上的村党支部书记"></blog-title>
+    </div>
+    <template id="blog-title">
+      <h1>{{title}}</h1>
+    </template>
 
-  <script>
+    <script>
     /*
     Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。
     一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。
@@ -26,11 +26,11 @@
       props: {
         title: String
       }
-    });
+    })
 
     new Vue({
       el: '#app'
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

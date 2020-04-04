@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>基本示例</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <button-count></button-count>
-  </div>
-  <!-- button-count 组件 -->
-  <template id="button-count">
-    <div>
-      <button @click="count++">按钮</button>
-      <p>按钮被按了{{count}}次</p>
+  <head>
+    <meta charset="UTF-8">
+    <title>基本示例</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button-count></button-count>
     </div>
-  </template>
+    <!-- button-count 组件 -->
+    <template id="button-count">
+      <div>
+        <button @click="count++">按钮</button>
+        <p>按钮被按了{{count}}次</p>
+      </div>
+    </template>
 
-  <script>
+    <script>
     /*
     组件是可复用的 Vue 实例，且带有一个名字：在这个例子中是 <button-counter>。
     我们可以在一个通过 new Vue 创建的 Vue 根实例中，把这个组件作为自定义元素来使用
     */
     Vue.component('button-count', {
       template: '#button-count',
-      data() {
+      data () {
         return {
           count: 0
         }
       }
-    });
+    })
 
     new Vue({
       el: '#app'
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

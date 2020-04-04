@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>事件修饰符</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <!--阻止事件冒泡-->
-    <div @click="showDiv">
-      <button @click.stop="showButton">按钮</button>
+  <head>
+    <meta charset="UTF-8">
+    <title>事件修饰符</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--阻止事件冒泡-->
+      <div @click="showDiv">
+        <button @click.stop="showButton">按钮</button>
+      </div>
+      <!--阻止默认事件-->
+      <form action="https://www.baidu.com" @submit.prevent="showForm">
+        <input type="submit">
+      </form>
     </div>
-    <!--阻止默认事件-->
-    <form action="https://www.baidu.com" @submit.prevent="showForm">
-      <input type="submit">
-    </form>
-  </div>
 
-  <script>
+    <script>
     /*
     在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。
     尽管我们可以在方法中轻松实现这点，但更好的方式是：方法只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。
@@ -54,17 +54,17 @@
     new Vue({
       el: '#app',
       methods: {
-        showDiv() {
+        showDiv () {
           alert('div')
         },
-        showButton() {
+        showButton () {
           alert('button')
         },
-        showForm(){
+        showForm () {
           alert('form')
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

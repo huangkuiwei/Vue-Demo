@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>绑定内联样式-对象语法</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <p :style="{'font-size': fontSize + 'px',color: color}">Hello World</p>
-    <!--直接绑定到一个样式对象，更加清晰明了-->
-    <span :style="styleObject">Hello Vue.js</span>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>绑定内联样式-对象语法</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p :style="{'font-size': fontSize + 'px',color: color}">Hello World</p>
+      <!--直接绑定到一个样式对象，更加清晰明了-->
+      <span :style="styleObject">Hello Vue.js</span>
+    </div>
 
-  <script>
+    <script>
     /*
     v-bind:style 的对象语法十分直观——看着非常像 CSS，但其实是一个 JavaScript 对象。
     CSS 属性名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用单引号括起来) 来命名
@@ -29,6 +29,6 @@
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

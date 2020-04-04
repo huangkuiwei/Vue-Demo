@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>计算属性-计算属性缓存 vs 方法</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <!--调用方法，也可以返回相同的结果-->
-    <p>{{reversedMessage()}}</p>
-    <!--下面的计算属性将不再更新，因为 Date.now() 不是响应式依赖-->
-    <p>{{nowTimeComputed}}</p>
-    <!--这里的值会更新，每次访问都会重新执行一遍nowTimeMethods()函数-->
-    <p>{{nowTimeMethods()}}</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>计算属性-计算属性缓存 vs 方法</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--调用方法，也可以返回相同的结果-->
+      <p>{{reversedMessage()}}</p>
+      <!--下面的计算属性将不再更新，因为 Date.now() 不是响应式依赖-->
+      <p>{{nowTimeComputed}}</p>
+      <!--这里的值会更新，每次访问都会重新执行一遍nowTimeMethods()函数-->
+      <p>{{nowTimeMethods()}}</p>
+    </div>
 
-  <script>
+    <script>
     /*
     我们可以通过在表达式中调用方法来达到同样的效果。
     我们可以将同一函数定义为一个方法而不是一个计算属性。
@@ -28,19 +28,19 @@
         message: 'Hello World'
       },
       methods: {
-        reversedMessage() {
+        reversedMessage () {
           return this.message.split('').reverse().join('')
         },
-        nowTimeMethods() {
+        nowTimeMethods () {
           return Date.now()
         }
       },
       computed: {
-        nowTimeComputed() {
+        nowTimeComputed () {
           return Date.now()
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

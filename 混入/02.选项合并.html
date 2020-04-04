@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>选项合并</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
+  <head>
+    <meta charset="UTF-8">
+    <title>选项合并</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
 
-  </div>
+    </div>
 
-  <script>
+    <script>
     /*
     当组件和混入对象含有同名选项时，这些选项将以恰当的方式混合。
     比如，数据对象在内部会进行浅合并 (一层属性深度)，在和组件的数据发生冲突时以组件数据优先。
@@ -19,13 +19,13 @@
     注意：Vue.extend() 也使用同样的策略进行合并。
     */
     let myMixin = {
-      created() {
+      created () {
         alert(this.message)
       },
       data: {
         message: 'created-myMixin'
       }
-    };
+    }
 
     new Vue({
       mixins: [myMixin],
@@ -34,10 +34,10 @@
         message: 'created-Vue'
       },
       //会弹出两次窗口，弹出的内容都是 'created-Vue' 钩子会合并未一个对象，钩子混入先于组件。
-      created() {
+      created () {
         alert(this.message)
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

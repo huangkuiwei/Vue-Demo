@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>计算属性-例子</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <p>message初始值：{{message}}</p>
-    <!--打开浏览器的控制台，自行修改例子中的 Vue 实例。其 reversedMessage 的值始终取决于 实例的 message 的值。-->
-    <p>message计算属性值：{{reversedMessage}}</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>计算属性-例子</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>message初始值：{{message}}</p>
+      <!--打开浏览器的控制台，自行修改例子中的 Vue 实例。其 reversedMessage 的值始终取决于 实例的 message 的值。-->
+      <p>message计算属性值：{{reversedMessage}}</p>
+    </div>
 
-  <script>
+    <script>
     /*
     模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。
     对于任何复杂逻辑，你都应当使用计算属性。
@@ -24,11 +24,11 @@
       },
       computed: {
         // 计算属性的 getter
-        reversedMessage() {
+        reversedMessage () {
           return this.message.split('').reverse().join('')
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

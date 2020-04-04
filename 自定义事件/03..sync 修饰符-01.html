@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>.sync 修饰符</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <com-a :title.sync="title"></com-a>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>.sync 修饰符</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <com-a :title.sync="title"></com-a>
+    </div>
 
-  <script>
+    <script>
     /*
     注意带有 .sync 修饰符的 v-bind 不能和表达式一起使用 (例如 v-bind:title.sync=”doc.title + ‘!’” 是无效的)。
     取而代之的是，你只能提供你想要绑定的属性名，类似 v-model。
@@ -18,7 +18,7 @@
     Vue.component('com-a', {
       props: ['title'],
       template: `<div><h1>{{title}}</h1><button @click="$emit('update:title', 'Hello World')">按钮</button></div>`
-    });
+    })
 
     new Vue({
       el: '#app',
@@ -26,6 +26,6 @@
         title: 'Hello Vue.js'
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>按键修饰符</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <input type="text" @keydown.enter="tip">
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>按键修饰符</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" @keydown.enter="tip">
+    </div>
 
-  <script>
+    <script>
     /*
     在监听键盘事件时，我们经常需要检查常见的键值。Vue 允许为 v-on 在监听键盘事件时添加按键修饰符：
     eg：<input @keyup.13="submit">
@@ -25,11 +25,11 @@
     new Vue({
       el: '#app',
       methods: {
-        tip() {
+        tip () {
           alert('您按了回车键（enter）')
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

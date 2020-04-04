@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>基础用法-单选按钮</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <input type="radio" v-model="select" value="篮球">篮球
-    <input type="radio" v-model="select" value="足球">足球
-    <input type="radio" v-model="select" value="乒乓球">乒乓球
-    <input type="radio" v-model="select" value="橄榄球">橄榄球
-    <input type="radio" v-model="select" value="高尔夫球">高尔夫球
-    <p>您选择的是：{{select}}</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>基础用法-单选按钮</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="radio" v-model="select" value="篮球">篮球
+      <input type="radio" v-model="select" value="足球">足球
+      <input type="radio" v-model="select" value="乒乓球">乒乓球
+      <input type="radio" v-model="select" value="橄榄球">橄榄球
+      <input type="radio" v-model="select" value="高尔夫球">高尔夫球
+      <p>您选择的是：{{select}}</p>
+    </div>
 
-  <script>
+    <script>
     /*
-    
+
     */
     new Vue({
       el: '#app',
@@ -25,6 +25,6 @@
         select: ''
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

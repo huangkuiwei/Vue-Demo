@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>钩子函数参数</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <p v-demo:a.b.c="1"></p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>钩子函数参数</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p v-demo:a.b.c="1"></p>
+    </div>
 
-  <script>
+    <script>
     /*
     指令钩子函数会被传入以下参数：
     1.el：指令所绑定的元素，可以用来直接操作 DOM 。
@@ -26,18 +26,18 @@
     注意：除了 el 之外，其它参数都应该是只读的，切勿进行修改。如果需要在钩子之间共享数据，建议通过元素的 dataset 来进行。
     */
     Vue.directive('demo', {
-      inserted(el, binding, vnode) {
+      inserted (el, binding, vnode) {
         el.innerHTML = `binding.name => ${binding.name}<br>
                         binding.value => ${binding.value}<br>
                         binding.arg => ${binding.arg}<br>
                         binding.modifiers => ${JSON.stringify(binding.modifiers)}<br>
                         vnode => ${Object.keys(vnode).join(', ')}`
       }
-    });
+    })
 
     new Vue({
       el: '#app'
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

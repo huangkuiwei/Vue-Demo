@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>函数简写</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <p v-color="color">Hello Vue.js</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>函数简写</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p v-color="color">Hello Vue.js</p>
+    </div>
 
-  <script>
+    <script>
     /*
     在很多时候，你可能想在 bind 和 update 时触发相同行为，而不关心其它的钩子。
     eg:    Vue.directive('color-swatch', function (el, binding) {
@@ -19,12 +19,12 @@
     */
     Vue.directive('color', (el, binding) => {
       el.style.color = binding.value
-    });
+    })
 
     new Vue({
       el: '#app'
 
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

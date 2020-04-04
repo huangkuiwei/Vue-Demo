@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>作用域插槽</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <todo-list :todos="todos">
-      <!--在 2.5.0+，slot-scope 不再限制在 <template> 元素上使用，而可以用在插槽内的任何元素或组件上。-->
-      <template slot-scope="{todo}">
-        <span v-if="todo.isFinish">😁{{todo.name}}---已完成</span>
-        <span v-else>😭{{todo.name}}---未完成</span>
-      </template>
-    </todo-list>
-  </div>
-  <template id="todo-list">
-    <ul>
-      <li v-for="todo in todos">
-        <slot :todo="todo">
-        </slot>
-      </li>
-    </ul>
-  </template>
+  <head>
+    <meta charset="UTF-8">
+    <title>作用域插槽</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <todo-list :todos="todos">
+        <!--在 2.5.0+，slot-scope 不再限制在 <template> 元素上使用，而可以用在插槽内的任何元素或组件上。-->
+        <template slot-scope="{todo}">
+          <span v-if="todo.isFinish">😁{{todo.name}}---已完成</span>
+          <span v-else>😭{{todo.name}}---未完成</span>
+        </template>
+      </todo-list>
+    </div>
+    <template id="todo-list">
+      <ul>
+        <li v-for="todo in todos">
+          <slot :todo="todo">
+          </slot>
+        </li>
+      </ul>
+    </template>
 
-  <script>
+    <script>
     /*
     在 2.5.0+，slot-scope 不再限制在 <template> 元素上使用，而可以用在插槽内的任何元素或组件上。
     */
     Vue.component('todo-list', {
       props: ['todos'],
       template: '#todo-list'
-    });
+    })
 
     new Vue({
       el: '#app',
       data: {
         todos: [
-          {id: 1, name: 'HTML', isFinish: true},
-          {id: 2, name: 'CSS', isFinish: false},
-          {id: 3, name: 'JavaScript', isFinish: true},
-          {id: 4, name: 'Vue.js', isFinish: true},
-          {id: 4, name: 'React.js', isFinish: true},
-          {id: 4, name: 'Java', isFinish: false},
-          {id: 4, name: 'PHP', isFinish: false}
+          { id: 1, name: 'HTML', isFinish: true },
+          { id: 2, name: 'CSS', isFinish: false },
+          { id: 3, name: 'JavaScript', isFinish: true },
+          { id: 4, name: 'Vue.js', isFinish: true },
+          { id: 4, name: 'React.js', isFinish: true },
+          { id: 4, name: 'Java', isFinish: false },
+          { id: 4, name: 'PHP', isFinish: false }
         ]
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

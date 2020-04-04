@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>v-show</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <span v-show="ok">Hello Vue.js</span>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>v-show</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <span v-show="ok">Hello Vue.js</span>
+    </div>
 
-  <script>
+    <script>
     /*
     另一个用于根据条件展示元素的选项是 v-show 指令。用法大致一样
     不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 display。
@@ -22,6 +22,6 @@
         ok: true
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

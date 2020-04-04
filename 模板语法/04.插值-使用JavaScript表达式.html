@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>插值-使用JavaScript表达式</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <p>{{number + 10}}</p>
-    <p>{{number >= 60 ? '及格' : '不及格'}}</p>
-    <p>{{message.split('').reverse().join('')}}</p>
-    <p :id="id + Math.random()"></p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>插值-使用JavaScript表达式</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{number + 10}}</p>
+      <p>{{number >= 60 ? '及格' : '不及格'}}</p>
+      <p>{{message.split('').reverse().join('')}}</p>
+      <p :id="id + Math.random()"></p>
+    </div>
 
-  <script>
+    <script>
     /*
     迄今为止，在我们的模板中，我们一直都只绑定简单的属性键值。
     但实际上，对于所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。
@@ -30,6 +30,6 @@
         id: 'box'
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

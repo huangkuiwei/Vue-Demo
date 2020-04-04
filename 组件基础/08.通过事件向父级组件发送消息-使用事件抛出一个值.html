@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>通过事件向父级组件发送消息-使用事件抛出一个值</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <div :style="{'font-size': fontSize + 'rem'}">
-      <blog-detail
+  <head>
+    <meta charset="UTF-8">
+    <title>通过事件向父级组件发送消息-使用事件抛出一个值</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div :style="{'font-size': fontSize + 'rem'}">
+        <blog-detail
           :blog-item="item"
           v-for="item of blog"
           :key="item.id"
           @increase="fontSize += $event"
           @shrink="fontSize -= $event">
-      </blog-detail>
+        </blog-detail>
+      </div>
     </div>
-  </div>
-  <template id="blog-detail">
-    <div>
-      <p style="display: inline-block;">{{blogItem.title}}</p>
-      <button @click="$emit('increase', num)">放大字体</button>
-      <button @click="$emit('shrink', num)">缩小字体</button>
-    </div>
-  </template>
+    <template id="blog-detail">
+      <div>
+        <p style="display: inline-block;">{{blogItem.title}}</p>
+        <button @click="$emit('increase', num)">放大字体</button>
+        <button @click="$emit('shrink', num)">缩小字体</button>
+      </div>
+    </template>
 
-  <script>
+    <script>
     /*
     有的时候用一个事件来抛出一个特定的值是非常有用的。
     例如我们可能想让 <blog-post> 组件决定它的文本要放大多少。这时可以使用 $emit 的第二个参数来提供这个值。
@@ -33,7 +33,7 @@
     */
     Vue.component('blog-detail', {
       template: '#blog-detail',
-      data() {
+      data () {
         return {
           num: 0.5
         }
@@ -41,20 +41,20 @@
       props: {
         blogItem: Object
       }
-    });
+    })
 
     new Vue({
       el: '#app',
       data: {
         blog: [
-          {id: 1, title: '写在习近平考察曲阜五周年之际', createTime: '2018.9.22'},
-          {id: 2, title: '记奋战在脱贫攻坚战场上的村党支部书记', createTime: '2018.10.22'},
-          {id: 3, title: '海上丝路看今朝：2018年习近平亚太之行', createTime: '2018.11.22'},
-          {id: 4, title: '中国受害者平均遭受35次家暴才会报警', createTime: '2018.11.09'}
+          { id: 1, title: '写在习近平考察曲阜五周年之际', createTime: '2018.9.22' },
+          { id: 2, title: '记奋战在脱贫攻坚战场上的村党支部书记', createTime: '2018.10.22' },
+          { id: 3, title: '海上丝路看今朝：2018年习近平亚太之行', createTime: '2018.11.22' },
+          { id: 4, title: '中国受害者平均遭受35次家暴才会报警', createTime: '2018.11.09' }
         ],
         fontSize: 1
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

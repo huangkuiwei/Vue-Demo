@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>全局混入</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
+  <head>
+    <meta charset="UTF-8">
+    <title>全局混入</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
 
-  </div>
+    </div>
 
-  <script>
+    <script>
     /*
     也可以全局注册混入对象。注意使用！
     一旦使用全局混入对象，将会影响到 所有 之后创建的 Vue 实例。使用恰当时，可以为自定义对象注入处理逻辑。
@@ -18,19 +18,19 @@
     大多数情况下，只应当应用于自定义选项，就像上面示例一样。也可以将其用作 Plugins 以避免产生重复应用
     */
     Vue.mixin({
-      created() {
+      created () {
         if (this.$options.myOption) {
           alert(this.$options.myOption)
         } else {
           alert('暂无自定义选项')
         }
       }
-    });
+    })
 
     new Vue({
       el: '#app',
       myOption: 'Hello Vue.js'
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

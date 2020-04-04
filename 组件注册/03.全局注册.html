@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>全局注册</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <!--在所有子组件中也是如此，也就是说这三个组件在各自内部也都可以相互使用。-->
-    <com-a></com-a>
-    <com-b></com-b>
-    <com-c></com-c>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>全局注册</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--在所有子组件中也是如此，也就是说这三个组件在各自内部也都可以相互使用。-->
+      <com-a></com-a>
+      <com-b></com-b>
+      <com-c></com-c>
+    </div>
 
-  <script>
+    <script>
     /*
     Vue.component('my-component-name', {
       // ... 选项 ...
     })
     这些组件是全局注册的。也就是说它们在注册之后可以用在任何新创建的 Vue 根实例 (new Vue) 的模板中。
     */
-    Vue.component('com-a',{
-      template:'<h1>com-a</h1>'
-    });
-    Vue.component('com-b',{
-      template:'<h1>com-b</h1>'
-    });
-    Vue.component('com-c',{
-      template:'<h1>com-c</h1>'
-    });
+    Vue.component('com-a', {
+      template: '<h1>com-a</h1>'
+    })
+    Vue.component('com-b', {
+      template: '<h1>com-b</h1>'
+    })
+    Vue.component('com-c', {
+      template: '<h1>com-c</h1>'
+    })
 
     new Vue({
       el: '#app',
       data: {}
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

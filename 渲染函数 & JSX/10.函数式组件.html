@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>函数式组件</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <com-a title="Hello Vue.js"></com-a>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>函数式组件</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <com-a title="Hello Vue.js"></com-a>
+    </div>
 
-  <script>
+    <script>
     /*
     没有管理或者监听任何传递给他的状态，也没有生命周期方法。它只是一个接收参数的函数。
     我们标记组件为 functional，这意味它是无状态 (没有响应式数据)，无实例 (没有 this 上下文)。
@@ -27,15 +27,15 @@
     */
     Vue.component('com-a', {
       functional: true,
-      render(h, context) {
+      render (h, context) {
         return h('div', {}, [h('h1', {}, context.props.title)])
       }
-    });
+    })
 
     new Vue({
       el: '#app',
       data: {}
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

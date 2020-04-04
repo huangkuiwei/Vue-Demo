@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>一段取值范围的 v-for</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <ul>
-      <!--渲染结果为：1 2 3 4 5 6 7 8 9 10-->
-      <li v-for="n in 10">
-        {{n}}
-      </li>
-    </ul>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>一段取值范围的 v-for</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <!--渲染结果为：1 2 3 4 5 6 7 8 9 10-->
+        <li v-for="n in 10">
+          {{n}}
+        </li>
+      </ul>
+    </div>
 
-  <script>
+    <script>
     /*
     v-for 也可以取整数。在这种情况下，它将重复多次模板。
     */
     new Vue({
       el: '#app'
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

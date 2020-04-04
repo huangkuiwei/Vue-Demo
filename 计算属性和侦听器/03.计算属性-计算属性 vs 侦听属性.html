@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>计算属性-计算属性 vs 侦听属性</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    姓：<input type="text" v-model="firstName">
-    名：<input type="text" v-model="lastName">
-    <p>全名：{{fullName}}</p>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>计算属性-计算属性 vs 侦听属性</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      姓：<input type="text" v-model="firstName">
+      名：<input type="text" v-model="lastName">
+      <p>全名：{{fullName}}</p>
+    </div>
 
-  <script>
+    <script>
     /*
     Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：侦听属性。当你有一些数据需要随着其它数据变动而变动时。
     */
@@ -25,14 +25,14 @@
       },
       watch: {
         //侦听 firstName 和 lastName 的值，当它们的值方式变化时 fullName 也跟着变
-        firstName(val) {
+        firstName (val) {
           return this.fullName = `${val} ${this.lastName}`
         },
-        lastName(val) {
+        lastName (val) {
           return this.fullName = `${this.firstName} ${val}`
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>计算属性-计算属性的 setter</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    姓：<input type="text" v-model="firstName">
-    名：<input type="text" v-model="lastName">
-    全名：<input type="text" v-model="fullName">
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>计算属性-计算属性的 setter</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      姓：<input type="text" v-model="firstName">
+      名：<input type="text" v-model="lastName">
+      全名：<input type="text" v-model="fullName">
+    </div>
 
-  <script>
+    <script>
     /*
     计算属性默认只有 getter ，不过在需要时你也可以提供一个 setter
     */
@@ -20,24 +20,24 @@
       el: '#app',
       data: {
         firstName: '',
-        lastName: '',
+        lastName: ''
       },
       computed: {
         fullName: {
           //getter
-          get() {
+          get () {
             //注意空格
             return `${this.firstName}${this.lastName ? ` ${this.lastName}` : this.lastName}`
           },
           //setter  此时设置 fullName，firstName 和 lastName 会同步更新
-          set(newValue) {
-            let name = newValue.split(' ');
-            this.firstName = name[0] || '';
+          set (newValue) {
+            let name = newValue.split(' ')
+            this.firstName = name[0] || ''
             this.lastName = name[1] || ''
           }
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>鼠标按钮修饰符</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <!--默认单机左键-->
-    <button @click.left="greet">按钮</button>
-    <!--单间中键-->
-    <button @click.middle="greet">按钮</button>
-    <!--单机右键并阻止默认事件-->
-    <button @click.right.prevent="greet">按钮</button>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>鼠标按钮修饰符</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--默认单机左键-->
+      <button @click.left="greet">按钮</button>
+      <!--单间中键-->
+      <button @click.middle="greet">按钮</button>
+      <!--单机右键并阻止默认事件-->
+      <button @click.right.prevent="greet">按钮</button>
+    </div>
 
-  <script>
+    <script>
     /*
     这些修饰符会限制处理函数仅响应特定的鼠标按钮。
     .left     .right      .middle
@@ -23,11 +23,11 @@
     new Vue({
       el: '#app',
       methods: {
-        greet(){
+        greet () {
           alert('Hello Vue.js')
         }
       }
     })
-  </script>
-</body>
+    </script>
+  </body>
 </html>
