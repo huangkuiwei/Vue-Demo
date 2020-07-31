@@ -21,24 +21,24 @@
     </div>
 
     <script>
-    /*
-    你可以通过 this.$slots 访问静态插槽的内容，得到的是一个 VNodes 数组。
-    */
-    Vue.component('render-demo', {
-        render (h) {
-          return h('div', [this.$slots.default, this.$slots.name1, this.$scopedSlots.name2({ message: this.message })])
-        },
-        data () {
-          return {
-            message: 'Hello Vue.js'
+      /*
+      你可以通过 this.$slots 访问静态插槽的内容，得到的是一个 VNodes 数组。
+      */
+      Vue.component('render-demo', {
+          render (h) {
+            return h('div', [this.$slots.default, this.$slots.name1, this.$scopedSlots.name2({ message: this.message })])
+          },
+          data () {
+            return {
+              message: 'Hello Vue.js'
+            }
           }
         }
-      }
-    )
+      )
 
-    new Vue({
-      el: '#app'
-    })
+      new Vue({
+        el: '#app'
+      })
     </script>
   </body>
 </html>

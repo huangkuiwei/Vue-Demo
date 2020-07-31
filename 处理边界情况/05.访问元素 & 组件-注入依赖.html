@@ -11,23 +11,23 @@
     </div>
 
     <script>
-    /*
-    provide 选项允许我们指定我们想要提供给后代组件的数据/方法。
-    eg：provide: function () {
-          return {
-            getMap: this.getMap
+      /*
+      provide 选项允许我们指定我们想要提供给后代组件的数据/方法。
+      eg：provide: function () {
+            return {
+              getMap: this.getMap
+            }
           }
-        }
-    然后在任何后代组件里，我们都可以使用 inject 选项来接收指定的我们想要添加在这个实例上的属性。
-    eg：inject: ['getMap']
-    实际上，你可以把依赖注入看作一部分“大范围有效的 prop”，除了：
-    1.祖先组件不需要知道哪些后代组件使用它提供的属性
-    2.后代组件不需要知道被注入的属性来自哪里
-    */
-    new Vue({
-      el: '#app',
-      data: {}
-    })
+      然后在任何后代组件里，我们都可以使用 inject 选项来接收指定的我们想要添加在这个实例上的属性。
+      eg：inject: ['getMap']
+      实际上，你可以把依赖注入看作一部分“大范围有效的 prop”，除了：
+      1.祖先组件不需要知道哪些后代组件使用它提供的属性
+      2.后代组件不需要知道被注入的属性来自哪里
+      */
+      new Vue({
+        el: '#app',
+        data: {}
+      })
     </script>
   </body>
 </html>

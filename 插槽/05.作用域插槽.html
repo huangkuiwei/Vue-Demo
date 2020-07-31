@@ -25,28 +25,28 @@
     </template>
 
     <script>
-    /*
-    在 2.5.0+，slot-scope 不再限制在 <template> 元素上使用，而可以用在插槽内的任何元素或组件上。
-    */
-    Vue.component('todo-list', {
-      props: ['todos'],
-      template: '#todo-list'
-    })
+      /*
+      在 2.5.0+，slot-scope 不再限制在 <template> 元素上使用，而可以用在插槽内的任何元素或组件上。
+      */
+      Vue.component('todo-list', {
+        props: ['todos'],
+        template: '#todo-list'
+      })
 
-    new Vue({
-      el: '#app',
-      data: {
-        todos: [
-          { id: 1, name: 'HTML', isFinish: true },
-          { id: 2, name: 'CSS', isFinish: false },
-          { id: 3, name: 'JavaScript', isFinish: true },
-          { id: 4, name: 'Vue.js', isFinish: true },
-          { id: 4, name: 'React.js', isFinish: true },
-          { id: 4, name: 'Java', isFinish: false },
-          { id: 4, name: 'PHP', isFinish: false }
-        ]
-      }
-    })
+      new Vue({
+        el: '#app',
+        data: {
+          todos: [
+            { id: 1, name: 'HTML', isFinish: true },
+            { id: 2, name: 'CSS', isFinish: false },
+            { id: 3, name: 'JavaScript', isFinish: true },
+            { id: 4, name: 'Vue.js', isFinish: true },
+            { id: 4, name: 'React.js', isFinish: true },
+            { id: 4, name: 'Java', isFinish: false },
+            { id: 4, name: 'PHP', isFinish: false }
+          ]
+        }
+      })
     </script>
   </body>
 </html>

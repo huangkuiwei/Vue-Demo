@@ -16,21 +16,21 @@
     </template>
 
     <script>
-    /*
-    Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。
-    一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。
-    一个 prop 被注册之后，你就可以把数据作为一个自定义特性传递进来。
-    */
-    Vue.component('blog-title', {
-      template: '#blog-title',
-      props: {
-        title: String
-      }
-    })
+      /*
+      Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。
+      一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。
+      一个 prop 被注册之后，你就可以把数据作为一个自定义特性传递进来。
+      */
+      Vue.component('blog-title', {
+        template: '#blog-title',
+        props: {
+          title: String
+        }
+      })
 
-    new Vue({
-      el: '#app'
-    })
+      new Vue({
+        el: '#app'
+      })
     </script>
   </body>
 </html>

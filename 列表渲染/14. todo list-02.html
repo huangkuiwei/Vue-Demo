@@ -31,33 +31,33 @@
     </template>
 
     <script>
-    /*
+      /*
 
-    */
-    Vue.component('com-a', {
-      template: '#com-a',
-      props: {
-        item: String
-      }
-    })
-
-    new Vue({
-      el: '#app',
-      data: {
-        items: [],
-        data: ''
-      },
-      methods: {
-        addItem () {
-          if (!this.data) {
-            alert('您还没有输入...')
-            return
-          }
-          this.items.push(this.data)
-          this.data = ''
+      */
+      Vue.component('com-a', {
+        template: '#com-a',
+        props: {
+          item: String
         }
-      }
-    })
+      })
+
+      new Vue({
+        el: '#app',
+        data: {
+          items: [],
+          data: ''
+        },
+        methods: {
+          addItem () {
+            if (!this.data) {
+              alert('您还没有输入...')
+              return
+            }
+            this.items.push(this.data)
+            this.data = ''
+          }
+        }
+      })
     </script>
   </body>
 </html>

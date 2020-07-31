@@ -15,20 +15,20 @@
     </div>
 
     <script>
-    /*
-    父组件模板的所有东西都会在父级作用域内编译；子组件模板的所有东西都会在子级作用域内编译。
-    */
-    Vue.component('com-a', {
-      props: ['title'],
-      template: '<div><h1>{{title}}</h1><slot></slot></div>'
-    })
+      /*
+      父组件模板的所有东西都会在父级作用域内编译；子组件模板的所有东西都会在子级作用域内编译。
+      */
+      Vue.component('com-a', {
+        props: ['title'],
+        template: '<div><h1>{{title}}</h1><slot></slot></div>'
+      })
 
-    new Vue({
-      el: '#app',
-      data: {
-        content: '内容内容内容......'
-      }
-    })
+      new Vue({
+        el: '#app',
+        data: {
+          content: '内容内容内容......'
+        }
+      })
     </script>
   </body>
 </html>

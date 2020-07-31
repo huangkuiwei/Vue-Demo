@@ -11,26 +11,17 @@
     </div>
 
     <script>
-    /*
-    组件树中的所有 VNodes 必须是唯一的。这意味着，下面的 render function 是无效的：
-    render: function (createElement) {
-      var myParagraphVNode = createElement('p', 'hi')
-      return createElement('div', [
-        // 错误-重复的 VNodes
-        myParagraphVNode, myParagraphVNode
-      ])
-    }
-    如果你真的需要重复很多次的元素/组件，你可以使用工厂函数来实现。
-    例如，下面这个例子 render 函数完美有效地渲染了 20 个相同的段落：
-    render: function (createElement) {
-      return createElement('div',
-        Array.apply(null, { length: 20 }).map(function () {
-          return createElement('p', 'hi')
-        })
-      )
-    }
-    */
-    Vue.component('render-demo', {
+      /*
+      组件树中的所有 VNodes 必须是唯一的。这意味着，下面的 render function 是无效的：
+      render: function (createElement) {
+        var myParagraphVNode = createElement('p', 'hi')
+        return createElement('div', [
+          // 错误-重复的 VNodes
+          myParagraphVNode, myParagraphVNode
+        ])
+      }
+      如果你真的需要重复很多次的元素/组件，你可以使用工厂函数来实现。
+      例如，下面这个例子 render 函数完美有效地渲染了 20 个相同的段落：
       render: function (createElement) {
         return createElement('div',
           Array.apply(null, { length: 20 }).map(function () {
@@ -38,12 +29,21 @@
           })
         )
       }
-    })
+      */
+      Vue.component('render-demo', {
+        render: function (createElement) {
+          return createElement('div',
+            Array.apply(null, { length: 20 }).map(function () {
+              return createElement('p', 'hi')
+            })
+          )
+        }
+      })
 
-    new Vue({
-      el: '#app',
-      data: {}
-    })
+      new Vue({
+        el: '#app',
+        data: {}
+      })
     </script>
   </body>
 </html>

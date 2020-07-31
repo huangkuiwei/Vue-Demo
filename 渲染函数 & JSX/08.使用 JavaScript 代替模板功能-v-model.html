@@ -12,31 +12,31 @@
     </div>
 
     <script>
-    /*
-    render 函数中没有与 v-model 的直接对应 - 你必须自己实现相应的逻辑
-    */
-    Vue.component('base-input', {
-      render (h) {
-        return h('input', {
-          domProps: {
-            value: this.value
-          },
-          on: {
-            input: $event => {
-              this.$emit('input', $event.target.value)
+      /*
+      render 函数中没有与 v-model 的直接对应 - 你必须自己实现相应的逻辑
+      */
+      Vue.component('base-input', {
+        render (h) {
+          return h('input', {
+            domProps: {
+              value: this.value
+            },
+            on: {
+              input: $event => {
+                this.$emit('input', $event.target.value)
+              }
             }
-          }
-        })
-      },
-      props: ['value']
-    })
+          })
+        },
+        props: ['value']
+      })
 
-    new Vue({
-      el: '#app',
-      data: {
-        value: ''
-      }
-    })
+      new Vue({
+        el: '#app',
+        data: {
+          value: ''
+        }
+      })
     </script>
   </body>
 </html>

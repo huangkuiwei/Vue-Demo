@@ -11,39 +11,39 @@
     </div>
 
     <script>
-    /*
-    只要在原生的 JavaScript 中可以轻松完成的操作，Vue 的 render 函数就不会提供专有的替代方法。
-    比如，在 template 中使用的 v-if 和 v-for
-    */
-    Vue.component('render-demo', {
-      render (h) {
-        if (this.items.length > 0) {
-          return h('ul', this.items.map((item, index) => {
-            return h('li', `NO${index + 1}---${item.name} => ${item.age}`)
-          }))
-        } else {
-          return h('p', '暂无项目')
+      /*
+      只要在原生的 JavaScript 中可以轻松完成的操作，Vue 的 render 函数就不会提供专有的替代方法。
+      比如，在 template 中使用的 v-if 和 v-for
+      */
+      Vue.component('render-demo', {
+        render (h) {
+          if (this.items.length > 0) {
+            return h('ul', this.items.map((item, index) => {
+              return h('li', `NO${index + 1}---${item.name} => ${item.age}`)
+            }))
+          } else {
+            return h('p', '暂无项目')
+          }
+        },
+        props: {
+          items: {
+            type: Array,
+            required: true
+          }
         }
-      },
-      props: {
-        items: {
-          type: Array,
-          required: true
-        }
-      }
-    })
+      })
 
-    new Vue({
-      el: '#app',
-      data: {
-        items: [
-          { id: 1, name: '张三', age: 22 },
-          { id: 2, name: '李四', age: 32 },
-          { id: 3, name: '王五', age: 29 },
-          { id: 4, name: '赵六', age: 35 }
-        ]
-      }
-    })
+      new Vue({
+        el: '#app',
+        data: {
+          items: [
+            { id: 1, name: '张三', age: 22 },
+            { id: 2, name: '李四', age: 32 },
+            { id: 3, name: '王五', age: 29 },
+            { id: 4, name: '赵六', age: 35 }
+          ]
+        }
+      })
     </script>
   </body>
 </html>

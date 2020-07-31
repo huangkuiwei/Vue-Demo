@@ -16,31 +16,31 @@
     </div>
 
     <script>
-    /*
-    我们可以传给 v-bind:class 一个对象，以动态地切换 class：
-    eg：<div v-bind:class="{ active: isActive }"></div>
-    上面的语法表示 active 这个 class 存在与否将取决于数据属性 isActive 的 truthiness。
-    */
-    new Vue({
-      el: '#app',
-      data: {
-        p1: true,
-        p2: false,
-        spanClass: {
-          span1: false,
-          span2: true,
-          span3: false
-        }
-      },
-      computed: {
-        hClass () {
-          return {
-            hClass1: this.p1 && this.p2,
-            hClass2: this.spanClass.span1 || this.spanClass.span2
+      /*
+      我们可以传给 v-bind:class 一个对象，以动态地切换 class：
+      eg：<div v-bind:class="{ active: isActive }"></div>
+      上面的语法表示 active 这个 class 存在与否将取决于数据属性 isActive 的 truthiness。
+      */
+      new Vue({
+        el: '#app',
+        data: {
+          p1: true,
+          p2: false,
+          spanClass: {
+            span1: false,
+            span2: true,
+            span3: false
+          }
+        },
+        computed: {
+          hClass () {
+            return {
+              hClass1: this.p1 && this.p2,
+              hClass2: this.spanClass.span1 || this.spanClass.span2
+            }
           }
         }
-      }
-    })
+      })
     </script>
   </body>
 </html>

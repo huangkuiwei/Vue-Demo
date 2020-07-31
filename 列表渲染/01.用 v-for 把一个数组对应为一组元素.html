@@ -22,23 +22,23 @@
     </div>
 
     <script>
-    /*
-    我们用 v-for 指令根据一组数组的选项列表进行渲染。
-    v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组并且 item 是数组元素迭代的别名。
-    我们用 v-for 指令根据一组数组的选项列表进行渲染。v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组并且 item 是数组元素迭代的别名。
-    在 v-for 块中，我们拥有对父作用域属性的完全访问权限。v-for 还支持一个可选的第二个参数为当前项的索引。
-    你也可以用 of 替代 in 作为分隔符，因为它是最接近 JavaScript 迭代器的语法：
-    */
-    new Vue({
-      el: '#app',
-      data: {
-        arr: [
-          { name: '张三', age: 24 },
-          { name: '李四', age: 33 },
-          { name: '王五', age: 46 }
-        ]
-      }
-    })
+      /*
+      我们用 v-for 指令根据一组数组的选项列表进行渲染。
+      v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组并且 item 是数组元素迭代的别名。
+      我们用 v-for 指令根据一组数组的选项列表进行渲染。v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组并且 item 是数组元素迭代的别名。
+      在 v-for 块中，我们拥有对父作用域属性的完全访问权限。v-for 还支持一个可选的第二个参数为当前项的索引。
+      你也可以用 of 替代 in 作为分隔符，因为它是最接近 JavaScript 迭代器的语法：
+      */
+      new Vue({
+        el: '#app',
+        data: {
+          arr: [
+            { name: '张三', age: 24 },
+            { name: '李四', age: 33 },
+            { name: '王五', age: 46 }
+          ]
+        }
+      })
     </script>
   </body>
 </html>

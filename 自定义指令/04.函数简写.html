@@ -11,20 +11,20 @@
     </div>
 
     <script>
-    /*
-    在很多时候，你可能想在 bind 和 update 时触发相同行为，而不关心其它的钩子。
-    eg:    Vue.directive('color-swatch', function (el, binding) {
-              el.style.backgroundColor = binding.value
-           })
-    */
-    Vue.directive('color', (el, binding) => {
-      el.style.color = binding.value
-    })
+      /*
+      在很多时候，你可能想在 bind 和 update 时触发相同行为，而不关心其它的钩子。
+      eg:    Vue.directive('color-swatch', function (el, binding) {
+                el.style.backgroundColor = binding.value
+             })
+      */
+      Vue.directive('color', (el, binding) => {
+        el.style.color = binding.value
+      })
 
-    new Vue({
-      el: '#app'
+      new Vue({
+        el: '#app'
 
-    })
+      })
     </script>
   </body>
 </html>

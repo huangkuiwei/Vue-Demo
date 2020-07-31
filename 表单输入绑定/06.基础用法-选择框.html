@@ -34,24 +34,24 @@
     </div>
 
     <script>
-    /*
-    如果 v-model 表达式的初始值未能匹配任何选项，<select> 元素将被渲染为“未选中”状态。在 iOS 中，这会使用户无法选择第一个选项。
-    因为这样的情况下，iOS 不会触发 change 事件。因此，更推荐像上面这样提供一个值为空的禁用选项。
-    */
-    new Vue({
-      el: '#app',
-      data: {
-        select1: '',
-        select2: [],
-        items: [
-          { id: 1, name: '张三', age: 22 },
-          { id: 2, name: '李四', age: 34 },
-          { id: 3, name: '王五', age: 29 },
-          { id: 4, name: '赵六', age: 43 }
-        ],
-        select3: ''
-      }
-    })
+      /*
+      如果 v-model 表达式的初始值未能匹配任何选项，<select> 元素将被渲染为“未选中”状态。在 iOS 中，这会使用户无法选择第一个选项。
+      因为这样的情况下，iOS 不会触发 change 事件。因此，更推荐像上面这样提供一个值为空的禁用选项。
+      */
+      new Vue({
+        el: '#app',
+        data: {
+          select1: '',
+          select2: [],
+          items: [
+            { id: 1, name: '张三', age: 22 },
+            { id: 2, name: '李四', age: 34 },
+            { id: 3, name: '王五', age: 29 },
+            { id: 4, name: '赵六', age: 43 }
+          ],
+          select3: ''
+        }
+      })
     </script>
   </body>
 </html>

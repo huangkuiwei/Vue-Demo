@@ -15,28 +15,28 @@
     </div>
 
     <script>
-    /*
-    有时，我们想要显示一个数组的过滤或排序副本，而不实际改变或重置原始数据。
-    在这种情况下，可以创建返回过滤或排序数组的计算属性。
-    */
-    new Vue({
-      el: '#app',
-      data: {
-        num: [34, 363, 68, 547, 235, 7, 457, 44, 15]
-      },
-      computed: {
-        evenNum () {
-          return this.num.filter(item => {
-            return item % 2 === 0
-          })
+      /*
+      有时，我们想要显示一个数组的过滤或排序副本，而不实际改变或重置原始数据。
+      在这种情况下，可以创建返回过滤或排序数组的计算属性。
+      */
+      new Vue({
+        el: '#app',
+        data: {
+          num: [34, 363, 68, 547, 235, 7, 457, 44, 15]
         },
-        oddNum () {
-          return this.num.filter(item => {
-            return item % 2 !== 0
-          })
+        computed: {
+          evenNum () {
+            return this.num.filter(item => {
+              return item % 2 === 0
+            })
+          },
+          oddNum () {
+            return this.num.filter(item => {
+              return item % 2 !== 0
+            })
+          }
         }
-      }
-    })
+      })
     </script>
   </body>
 </html>

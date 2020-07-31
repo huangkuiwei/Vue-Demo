@@ -11,21 +11,24 @@
     </div>
 
     <script>
-    /*
-    注意带有 .sync 修饰符的 v-bind 不能和表达式一起使用 (例如 v-bind:title.sync=”doc.title + ‘!’” 是无效的)。
-    取而代之的是，你只能提供你想要绑定的属性名，类似 v-model。
-    */
-    Vue.component('com-a', {
-      props: ['title'],
-      template: `<div><h1>{{title}}</h1><button @click="$emit('update:title', 'Hello World')">按钮</button></div>`
-    })
+      /*
+      注意带有 .sync 修饰符的 v-bind 不能和表达式一起使用 (例如 v-bind:title.sync=”doc.title + ‘!’” 是无效的)。
+      取而代之的是，你只能提供你想要绑定的属性名，类似 v-model。
+      */
+      Vue.component('com-a', {
+        props: ['title'],
+        template: `
+          <div><h1>{{ title }}</h1>
+          <button @click="$emit('update:title', 'Hello World')">按钮</button>
+          </div>`
+      })
 
-    new Vue({
-      el: '#app',
-      data: {
-        title: 'Hello Vue.js'
-      }
-    })
+      new Vue({
+        el: '#app',
+        data: {
+          title: 'Hello Vue.js'
+        }
+      })
     </script>
   </body>
 </html>
